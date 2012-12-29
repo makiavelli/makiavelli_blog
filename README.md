@@ -1,4 +1,4 @@
 makiavelli_rulez
 ================
 
-Personal blogz of makiavelli
+Personal blog of makiavelli
