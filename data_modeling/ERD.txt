@@ -1,6 +1,9 @@
-http://www.asciiflow.com/#Draw5607261392855616643/1589133572
+Entity Relationship Diagram (ERD)
+=================================
 
-Definizione delle entità:
+
+Definizione delle entità
+------------------------
 
 posts: il contenuto vero e proprio del blog
 authors: elenco degli autori dei post, probabilmentè ce ne sarà solo uno
@@ -9,7 +12,11 @@ comments: elenco dei commenti scritti dagli utenti relativi ai post
 users: utente che ha scritto un commento
 preferences: una serie di preferenze del blog
 
-Definizione delle relazioni:
+Di seguito elenco in maniera dettagliata quali attributi saranno presenti in ogni entità.
+#TODO
+
+Definizione delle relazioni
+---------------------------
 
 Un autore può scrivere n post, mentre un post appartiene ad un solo autore, pertanto abbiamo una relazione 1-N.
 Un post può avere associati più tags, che essi siano categorie o tags, questi ultimi possono comparire in più post diversi, pertanto stabiliamo una relazione N-N
@@ -17,10 +24,9 @@ Un post può avere uno o più commenti, mentre un commento è presente solo nel 
 Un utente può scrivere n commenti, mentre un commento è scritto da un solo utente, la relazione sarà 1-N
 L'entità preferences serve a memorizzare informazioni di vario genere del blog, non è in relazione con nessun altro oggetto.
 
-Spiegazione delle entità:
+ERD
+---
 
-Di seguito elenco in maniera dettagliata quali attributi saranno presenti in ogni entità.
-
-
-
+#TODO work in progress here:
+http://www.asciiflow.com/#Draw5607261392855616643/1589133572
 
