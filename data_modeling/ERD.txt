@@ -42,20 +42,17 @@ http://www.asciiflow.com/#Draw5607261392855616643/1589133572
 
      http://www.asciiflow.com
 
-<pre>
-     http://www.asciiflow.com
-
                                                                       +-----------------------+
      +---------------+        +---------------------+                 |         USERS         |
      |   POST_TAGS   |        |        POSTS        |                 |-----------------------|
      |---------------|        |---------------------|                 |                       |
-     |               | N    1 |                     |       &lt;-        |  id_user{PK}          |
-     |  id_post{PPK} |&gt;-------+  id_post{PK}        | N  PUBLISHES  1 |  name                 |
-     |  id_tag{PPK}  |        |  id_user            |&gt;----------------+  surname              |
+     |               | N    1 |                     |       <-        |  id_user{PK}          |
+     |  id_post{PPK} |>-------+  id_post{PK}        | N  PUBLISHES  1 |  name                 |
+     |  id_tag{PPK}  |        |  id_user            |>----------------+  surname              |
      |               |        |  title              |                 |  email                |
      +---------------+        |  short_description  |                 |  mobile_number        |
             V N               |  content            |                 |  address              | N
-            |                 |  status             |                 |  city                 |&gt;--+
+            |                 |  status             |                 |  city                 |>--+
             |                 |                     |                 |  state                |   |
             |                 +---------------------+                 |  id_country           |   |
             |                      V N                                |  auth                 |   |
@@ -68,8 +65,8 @@ http://www.asciiflow.com/#Draw5607261392855616643/1589133572
      |--------------|              |                  |       COMMENTS       |                    |
      |              |              |                  |----------------------|                    |
      |  id_tag{PK}  |              |                  |                      |                    |
-     |  name        |              |                  |  id_comment{PK}      |         &lt;-         |
-     |  type        |              |       -&gt;         |  id_user             | 1     WRITES       |
+     |  name        |              |                  |  id_comment{PK}      |         <-         |
+     |  type        |              |       ->         |  id_user             | 1     WRITES       |
      |              |              |    CONTAINS    1 |  id_post             +--------------------+
      +--------------+              +------------------+  comment             |
                                                       |  rating              |
@@ -80,4 +77,4 @@ http://www.asciiflow.com/#Draw5607261392855616643/1589133572
      |  k{PK}        |
      |  value        |
      |               |
-     +---------------+</pre>
+     +---------------+
