@@ -42,39 +42,50 @@ http://www.asciiflow.com/#Draw5607261392855616643/1589133572
 
      http://www.asciiflow.com
 
-                                                                      +-----------------------+
-     +---------------+        +---------------------+                 |         USERS         |
-     |   POST_TAGS   |        |        POSTS        |                 |-----------------------|
-     |---------------|        |---------------------|                 |                       |
-     |               | N    1 |                     |       <-        |  id_user{PK}          |
-     |  id_post{PPK} |>-------+  id_post{PK}        | N  PUBLISHES  1 |  name                 |
-     |  id_tag{PPK}  |        |  id_user            |>----------------+  surname              |
-     |               |        |  title              |                 |  email                |
-     +---------------+        |  short_description  |                 |  mobile_number        |
-            V N               |  content            |                 |  address              | N
-            |                 |  status             |                 |  city                 |>--+
-            |                 |                     |                 |  state                |   |
-            |                 +---------------------+                 |  id_country           |   |
-            |                      V N                                |  auth                 |   |
-            |                      |                                  |  status               |   |
-            |                      |                                  |                       |   |
-            |                      |                                  +-----------------------+   |
-            | 1                    |                                                              |
-     +------+-------+              |                                                              |
-     |     TAGS     |              |                  +----------------------+                    |
-     |--------------|              |                  |       COMMENTS       |                    |
-     |              |              |                  |----------------------|                    |
-     |  id_tag{PK}  |              |                  |                      |                    |
-     |  name        |              |                  |  id_comment{PK}      |         <-         |
-     |  type        |              |       ->         |  id_user             | 1     WRITES       |
-     |              |              |    CONTAINS    1 |  id_post             +--------------------+
-     +--------------+              +------------------+  comment             |
-                                                      |  rating              |
-     +---------------+                                |  status              |
-     |  PREFERENCES  |                                |                      |
-     |---------------|                                +----------------------+
-     |               |
-     |  k{PK}        |
-     |  value        |
-     |               |
-     +---------------+
+
+     http://www.asciiflow.com
+
+
+ +----------------------+                        ->               +-----------------------+
+ |   BLOG_PREFERENCES   |                     GENERATE            |      STATISTICS       |
+ |----------------------|                                       N |-----------------------|
+ |                      |           +-------------+--------------<|                       |
+ |  id_preference{PK}   |           |             |               |  id_statistic{PK}     |
+ |  value               |           |     +---------------+       |  id_post              |
+ |                      |           |     |               |       |                       |
+ +----------------------+           |     | creation_date |       +-----------------------+
+                                    |     |               |
+                                    |     +---------------+
+                                    |
+                                    |
+                                  1 |                             +-----------------------+
+ +---------------+        +---------+-----------+                 |         USERS         |
+ |   POST_TAGS   |        |        POSTS        |                 |-----------------------|
+ |---------------|        |---------------------|                 |                       |
+ |               | N    1 |                     |       <-        |  id_user{PK}          |
+ |  id_post{PPK} |>-------+  id_post{PK}        | N  PUBLISHES  1 |  name                 |
+ |  id_tag{PPK}  |        |  id_user            |>----------------+  surname              |
+ |               |        |  title              |                 |  email                |
+ +---------------+        |  short_description  |                 |  mobile_number        |
+        V N               |  content            |                 |  address              | N
+        |                 |  creation_date      |                 |  city                 |>--+
+        |                 |  update_date        |                 |  state                |   |
+        |                 |  status             |                 |  id_country           |   |
+        |                 |                     |                 |  auth                 |   |
+        |                 +---------------------+                 |  status               |   |
+        |                      V N                                |                       |   |
+        |                      |                                  +-----------------------+   |
+        |                      |                                                              |
+        | 1                    |                                                              |
+ +------+-------+              |                  +----------------------+                    |
+ |     TAGS     |              |                  |       COMMENTS       |                    |
+ |--------------|              |                  |----------------------|                    |
+ |              |              |                  |                      |                    |
+ |  id_tag{PK}  |              |                  |  id_comment{PK}      |         <-         |
+ |  name        |              |       ->         |  id_user             | 1     WRITES       |
+ |  type        |              |    CONTAINS    1 |  id_post             +--------------------+
+ |              |              +------------------+  comment             |
+ +--------------+                                 |  rating              |
+                                                  |  status              |
+                                                  |                      |
+                                                  +----------------------+
