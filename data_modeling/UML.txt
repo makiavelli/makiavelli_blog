@@ -47,7 +47,7 @@ Work in progress here:
 http://www.asciiflow.com/#Draw5607261392855616643/1589133572
 
                                       http://www.asciiflow.com
-
+<pre>
 +------------------+
 |    CATEGORIES    |                               ->             +-----------------------+
 |------------------+                            GENERATE          |      STATISTICS       |
@@ -101,7 +101,7 @@ http://www.asciiflow.com/#Draw5607261392855616643/1589133572
 |  value               |
 |                      |
 +----------------------+
-
+</pre>
 Logic Model
 -----------
 
