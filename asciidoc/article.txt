@@ -1,0 +1,55 @@
+Articolo di test
+================
+Nome Cognome <nome_cognome@mail.com>
+v1.0, March 2013
+
+
+== Casi di test con un solo attributo ==
+Presento un caso di test
+
+ifdef::firstName[]
+Nome definito: {firstName}
+endif::[]
+
+ifdef::lastName[Cognome definito: {lastName}]
+
+ifndef::firstName[Attenzione: Nome autore non definito]
+
+== Casi di test con più attributi ==
+Presento una serie di test con più attributi da verificare
+
+ifdef::firstname,revNumber[]
+Nome E/O numero di revisione definiti
+Nome: {firstname}
+Numero di revisione: {revnumber}
+endif::[]
+
+ifdef::firstname+revnumber[]
+Nome E numero di revisione definiti
+Nome: {firstname}
+Numero di revisione: {revnumber}
+endif::[]
+
+== Casi di test con ifeval ==
+Serie di test con la macro ifeval
+
+{eval: 2+3}
+
+ifeval::[6 == {eval: 3*2}]
+Il numero è uguale
+endif::[]
+
+ifeval::["testab" == "testa"]
+La stringa è uguale
+endif::[]
+
+== Un po' di eval ==
+Esempi di utilizzo della macro "eval"
+
+{set:variabile1:{eval: 4+7}}
+{set:variabile2:2}
+
+Valore variabile 1: {variabile1}
+Valore variabile 2: {variabile2}
+Risultato moltiplicazione tra le due variabili: {eval: {variabile1} * {variabile2}}
+
