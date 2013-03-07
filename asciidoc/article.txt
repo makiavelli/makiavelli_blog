@@ -1,8 +1,9 @@
-Articolo di test
-================
+Articolo di test, versione di asciidoc utilizzata: 8.6.8
+========================================================
 Nome Cognome <nome_cognome@mail.com>
 v1.0, March 2013
 
+Dai un occhio al link:./article.txt[sorgente] di questo file.
 
 == Casi di test con un solo attributo ==
 Presento un caso di test
@@ -52,4 +53,34 @@ Esempi di utilizzo della macro "eval"
 Valore variabile 1: {variabile1}
 Valore variabile 2: {variabile2}
 Risultato moltiplicazione tra le due variabili: {eval: {variabile1} * {variabile2}}
+
+== The fucking passthrough macro ==
+Passiamo alle passthrough macro
+
+pass:[<q>To be or not to be</q>]
+pass:[<u>the '{author}'</u>]
+pass:attributes,quotes[<u>the '{author}'</u>]
+
+\n
+
+Con questa macro non abbiamo bisogno di quotare le quadre, in più possiamo inserire prima della
+macro degli attributi tra le quadre, solo nella versione in linea
+
+Red [red]
++++
+`sum_(i=1)\^n i=(n(n+1))/2`$ Qui ci stanno anche queste non quotate []
+ciao seconda riga
++++
+
+AsciiMathML formula
+
+
+$$
+{firstname}"cc"^&nbsp;[[a,b]+/,\$[-.c,d]]((n),(k))#&gt;
+$$
+
+\n
+
+ss+++{firstname}"cc"^&nbsp;[[a,b]+/,\$[-.c,d]]((n),(k))#&gt;+++
+
 
