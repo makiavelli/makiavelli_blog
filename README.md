@@ -1,4 +1,4 @@
 BLOG
 ================
 
-Personal blog of makiavelli
+My blog
